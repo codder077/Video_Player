@@ -15,12 +15,12 @@ This project provides a web-based video player with customizable subtitle featur
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/video-player.git
+    git clone https://github.com/codder077/Video_Player.git
     ```
 
 2. Navigate into the project directory:
     ```bash
-    cd video-player
+    cd videoplayer
     ```
 
 ### Install Dependencies
