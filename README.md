@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Video Player with Subtitle Customization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project provides a web-based video player with customizable subtitle features. Users can upload their own videos, manage subtitles, and see real-time subtitle updates.
 
-In the project directory, you can run:
+## Project Setup
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Clone the Repository
 
-### `npm test`
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/video-player.git
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate into the project directory:
+    ```bash
+    cd video-player
+    ```
 
-### `npm run build`
+### Install Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install project dependencies:
+    ```bash
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run the Project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Start the development server:
+    ```bash
+    npm start
+    ```
 
-### `npm run eject`
+2. Open your browser and go to `http://localhost:3000` to view the video player.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Uploading a Video
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Click on the "Choose File" button in the top-right corner.
+2. Select a video file from your local system.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Managing Subtitles
 
-## Learn More
+1. Add subtitles by clicking the "Add Subtitles" button.
+2. You can upload subtitle files or manually enter subtitle text.
+3. Customize the appearance of subtitles using the available options.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Real-Time Subtitle Updates
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. The video player will automatically update subtitles based on the current time of the video.
+2. You can see the subtitles overlayed on the video player.
 
-### Code Splitting
+## Running Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Run tests using:
+    ```bash
+    npm test
+    ```
 
-### Analyzing the Bundle Size
+2. This will execute all the test cases defined in the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Troubleshooting
 
-### Making a Progressive Web App
+- Ensure all dependencies are correctly installed.
+- Check that the video file is in a supported format.
+- For detailed error messages, refer to the console logs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any inquiries, please reach out to [dishanvijay321@example.com](mailto:your-email@example.com).

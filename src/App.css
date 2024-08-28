@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+/* src/App.css */
+.subtitle-controls {
+  margin-top: 20px;
+}
+
+.subtitle-controls label {
+  margin-right: 10px;
+}
+
+.subtitle-controls input {
+  margin: 5px;
+}
+
