@@ -1,3 +1,15 @@
+1
+00:00:01,000 --> 00:00:04,000
+Hello, this is the first subtitle.
 
-00:00:07,000 --> 00:00:09,000
-hello ji kya haal chal.
+2
+00:00:05,000 --> 00:00:09,000
+This is the second subtitle, it appears a bit later.
+
+3
+00:00:10,000 --> 00:00:13,000
+And here is the third subtitle.
+
+4
+00:00:14,000 --> 00:00:18,000
+This one is the last subtitle in this example file.

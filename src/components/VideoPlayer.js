@@ -1,39 +1,64 @@
-// VideoPlayer component
-
 import React, { useState, useEffect, useRef } from 'react';
 
 function VideoPlayer({ videoSrc, onVideoUpload, subtitles, subtitleStyle }) {
   const videoRef = useRef(null);
   const [currentSubtitle, setCurrentSubtitle] = useState('');
 
+  // Clean timing string to handle different line endings
+  const cleanTiming = (timing) => {
+    if (!timing) return '';
+    return timing.trim().replace(/\r/g, ''); // Remove carriage return characters
+  };
 
-  //call to set subtitle
+  // Convert time string to seconds
+  const timeToSeconds = (time) => {
+    if (!time || typeof time !== 'string') {
+      console.error('Invalid time format:', time);
+      return 0;
+    }
+    
+    const [hours, minutes, secondsWithMs] = time.split(':');
+    const [seconds, milliseconds] = secondsWithMs.split(',');
+  
+    return (
+      parseInt(hours) * 3600 +
+      parseInt(minutes) * 60 +
+      parseInt(seconds) +
+      parseInt(milliseconds) / 1000
+    );
+  };
+  
+
   useEffect(() => {
-    const video =  videoRef.current;
-
-    // Handled parsed Subtitle 
+    const video = videoRef.current;
+    console.log(subtitles);
+  
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
+  
       const activeSubtitle = subtitles.find((subtitle) => {
-        const [start, end] = subtitle.timing.split(' --> ').map(timeToSeconds);
+        const [start, end] = cleanTiming(subtitle.timing)
+          .split(' --> ')
+          .map(timeToSeconds);
+  
         return currentTime >= start && currentTime <= end;
       });
-
-      setCurrentSubtitle(activeSubtitle ? activeSubtitle.text : '');
+  
+      if (activeSubtitle) {
+        setCurrentSubtitle(activeSubtitle.text.trim());
+      } else {
+        setCurrentSubtitle(''); // Clear subtitle when no match is found
+      }
     };
-
+  
     video.addEventListener('timeupdate', handleTimeUpdate);
-
+  
     return () => {
       video.removeEventListener('timeupdate', handleTimeUpdate);
     };
   }, [subtitles]);
+  
 
-  const timeToSeconds = (time) => {
-    const [hours, minutes, seconds] = time.split(':').map(parseFloat);
-    return hours * 3600 + minutes * 60 + seconds;
-  };
- // ui fro video player
   return (
     <div className="relative w-full h-full">
       <video
@@ -42,7 +67,7 @@ function VideoPlayer({ videoSrc, onVideoUpload, subtitles, subtitleStyle }) {
         controls
         ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src={videoSrc || 'sample.mp4'} // Use uploaded video or fallback to sample video
+        src={videoSrc || 'https://www.w3schools.com/html/mov_bbb.mp4'}
       >
         Your browser does not support the video tag.
       </video>
@@ -68,4 +93,3 @@ function VideoPlayer({ videoSrc, onVideoUpload, subtitles, subtitleStyle }) {
 }
 
 export default VideoPlayer;
-
